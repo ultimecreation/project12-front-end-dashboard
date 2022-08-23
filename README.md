@@ -1,11 +1,12 @@
 # Getting Started
 
-This project ...
+This project is the front-end dashboard of SportSee website
 
-## h2
+## to run the project
 
-In the project directory, you can run:
+- fork or clone this repository
+- open the project using your IDE (VsCode for example)
+- open a new terminal
+- run `npm install`
+- once the installation is completed, run `npm run dev`
 
-### `npm start`
-
-Run
