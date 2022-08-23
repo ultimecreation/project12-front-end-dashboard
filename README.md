@@ -8,5 +8,5 @@ This project is the front-end dashboard of SportSee website
 - open the project using your IDE (VsCode for example)
 - open a new terminal
 - run `npm install`
-- once the installation is completed, run `npm run dev`
+- once the installation is completed, run `npm start`
 
