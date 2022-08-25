@@ -6,13 +6,21 @@ import './Navbar.scss'
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='main-nav'>
       <Logo />
       <ul>
-        <Link to="/">Accueil</Link>
-        <Link to="/profil">Profil</Link>
-        <Link to="/reglage">Réglage</Link>
-        <Link to="/communaute">Communauté</Link>
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li>
+          <Link to="/profil">Profil</Link>
+        </li>
+        <li>
+          <Link to="/reglage">Réglage</Link>
+        </li>
+        <li>
+          <Link to="/communaute">Communauté</Link>
+        </li>
       </ul>
     </nav>
   )

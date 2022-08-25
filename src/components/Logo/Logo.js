@@ -3,9 +3,9 @@ import './Logo.scss'
 
 const Logo = () => {
   return (
-    <div>
-      Logo
-    </div>
+    <figure className='logo'>
+        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="" />
+    </figure>
   )
 }
 
