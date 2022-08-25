@@ -8,19 +8,28 @@ const LeftSideBar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="yoga">Yoga</Link>
+                        <Link to="yoga">
+                            <img src={`${process.env.PUBLIC_URL}/images/yoga.png`} alt="yoga" />
+                        </Link>
                     </li>
                     <li>
-                        <Link to="natation">Natation</Link>
+                        <Link to="natation">
+                            <img src={`${process.env.PUBLIC_URL}/images/swimming.png`} alt="yoga" />
+                        </Link>
                     </li>
                     <li>
-                        <Link to="velo">Velo</Link>
+                        <Link to="velo">
+                            <img src={`${process.env.PUBLIC_URL}/images/cycling.png`} alt="yoga" />
+                        </Link>
                     </li>
                     <li>
-                        <Link to="musculation">Musculation</Link>
+                        <Link to="musculation">
+                            <img src={`${process.env.PUBLIC_URL}/images/workout.png`} alt="yoga" />
+                        </Link>
                     </li>
                 </ul>
             </nav>
+            <p>Copiryght, SportSee 2020</p>
         </div>
     )
 }
