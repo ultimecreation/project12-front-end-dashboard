@@ -27,7 +27,7 @@ const Profile = () => {
           </section>
         </div>
         <aside>
-          <UserHealth />
+          <UserHealth keyData={user.keyData} />
         </aside>
       </div>
     </main>
