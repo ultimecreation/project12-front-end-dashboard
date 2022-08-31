@@ -3,7 +3,7 @@ import './ListItem.scss'
 import PropTypes from 'prop-types'
 
 const ListItem = (props) => {
-    console.log(props)
+    
     return (
         <div className='list-item'>
             <figure >

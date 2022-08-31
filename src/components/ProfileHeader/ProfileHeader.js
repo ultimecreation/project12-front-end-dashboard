@@ -8,8 +8,9 @@ const ProfileHeader = (props) => {
         <div className="profile-header">
              
             <h1>
-                Bonjour, <span>{props.firstName}</span>
+                Bonjour <span>{props.firstName}</span>
             </h1>
+            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     )
 }
