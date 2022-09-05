@@ -1,11 +1,20 @@
 import React from 'react'
+import { PropTypes } from "prop-types";
 
+/**
+ * Custom tooltip used for Session component
+ *
+ * @param   {boolean}  active   
+ * @param   {array}  payload  
+ *
+ * @return  {HTMLElement}          
+ */
 const CustomSessionsTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
             <div style={Style.customTooltip}>
-                {payload.map(singlePayload => {
-                    return <p className="label" style={Style.text}>{`${singlePayload.value} min`}</p>
+                {payload.map((singlePayload, index) => {
+                    return <p key={index} className="label" style={Style.text}>{`${singlePayload.value} min`}</p>
                 })}
             </div>
         );
@@ -13,6 +22,14 @@ const CustomSessionsTooltip = ({ active, payload }) => {
     return null;
 }
 
+CustomSessionsTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
+
+/**
+ * setup style object
+ */
 const Style = {
     customTooltip: {
         backgroundColor: "white",
@@ -23,6 +40,7 @@ const Style = {
         fontWeight: 'bold'
     }
 }
+
 export default CustomSessionsTooltip
 
 

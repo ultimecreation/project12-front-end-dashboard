@@ -3,6 +3,7 @@ import './Sessions.scss'
 import PropTypes from 'prop-types'
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer, YAxis } from 'recharts';
 import CustomSessionsTooltip from '../CustomSessionsTooltip/CustomSessionsTooltip';
+
 const Sessions = (props) => {
     const data = props.sessions.map(session => {
         return {
@@ -16,7 +17,6 @@ const Sessions = (props) => {
             <ResponsiveContainer width="100%" height="100%">
 
                 <AreaChart
-
                     data={data}
                     yAxisId={180}
                     fill="#fff" margin={{ top: 20, right: 20, bottom: 20, left: -40 }}
@@ -38,4 +38,5 @@ const Sessions = (props) => {
 Sessions.propTypes = {
     sessions: PropTypes.array
 }
+
 export default Sessions

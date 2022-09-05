@@ -1,8 +1,8 @@
 import React from 'react'
 import './Kpi.scss'
 import PropTypes from 'prop-types'
-
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+
 const Kpi = (props) => {
     const myStartAngle = 225
     const myEndAngle = -((props.score * 100) * 3.6) + myStartAngle

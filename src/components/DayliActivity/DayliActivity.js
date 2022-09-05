@@ -6,6 +6,7 @@ import CustomDailyActivityTooltip from '../CustomDailyActivityTooltip/CustomDail
 
 
 const DayliActivity = (props) => {
+    
     const data = props.activities.map((activity) => {
         return {
             day: activity.day.split('-')[2],

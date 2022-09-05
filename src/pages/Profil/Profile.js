@@ -21,7 +21,11 @@ const Profile = () => {
                     <DayliActivity activities={activity.sessions} />
                     <section id="summary">
                         <Sessions sessions={sessions.sessions} />
-                        <RadarItem data={performance.data} kind={performance.kind} />
+                        <RadarItem 
+                            data={performance.data} 
+                            kind={performance.kind} 
+                            firstName={user.userInfos.firstName} 
+                        />
                         <Kpi score={user.todayScore} />
                     </section>
                 </div>

@@ -46,4 +46,5 @@ const UserHealth = (props) => {
 UserHealth.propTypes = {
     keyData: PropTypes.object
 }
+
 export default UserHealth
