@@ -12,30 +12,30 @@ import Workout from './pages/Workout/Workout';
 import Yoga from './pages/Yoga/Yoga';
 
 function App() {
-  return (
-    <div className="container">
+    return (
+        <div className="container">
 
-      <BrowserRouter>
-        <Navbar />
-        <div className="page-content">
-          <LeftSideBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profil" element={<Profile/>} />
-            <Route path="/reglage" element={<Settings/>} />
-            <Route path="/communaute" element={<Community/>} />
-            <Route path="/yoga" element={<Yoga/>} />
-            <Route path="/natation" element={<Swimming/>} />
-            <Route path="/velo" element={<Cycling/>} />
-            <Route path="/musculation" element={<Workout/>} />
-          </Routes>
+            <BrowserRouter>
+                <Navbar />
+                <div className="page-content">
+                    <LeftSideBar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/profil" element={<Profile />} />
+                        <Route path="/reglage" element={<Settings />} />
+                        <Route path="/communaute" element={<Community />} />
+                        <Route path="/yoga" element={<Yoga />} />
+                        <Route path="/natation" element={<Swimming />} />
+                        <Route path="/velo" element={<Cycling />} />
+                        <Route path="/musculation" element={<Workout />} />
+                    </Routes>
 
 
+                </div>
+
+            </BrowserRouter>
         </div>
-
-      </BrowserRouter>
-    </div>
-  );
+    );
 }
 
 export default App;

@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Shrikhand&display=swap');
 
-*{
+* {
     font-family: 'Roboto', sans-serif;
 }
-.container{
-    max-width:1440px;
+
+.container {
+    max-width: 1440px;
     margin: 0 auto;
 }
 
-.p-100{
+.p-100 {
     padding: 68px 100px 100px 109px;
 }
 
-.page-content{
+.page-content {
     display: flex;
 }

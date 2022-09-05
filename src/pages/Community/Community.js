@@ -3,12 +3,12 @@ import Header from '../../layout/Header/Header'
 import './Community.scss'
 
 const Community = () => {
-  return (
-    <div>
-      <Header/>
-      Communauté
-    </div>
-  )
+    return (
+        <div>
+            <Header />
+            Communauté
+        </div>
+    )
 }
 
 export default Community

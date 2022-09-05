@@ -1,16 +1,16 @@
-.sessions{
+.sessions {
     width: 258px;
     height: 263px;
     background: #FF0000;
     position: relative;
     border-radius: 5px;
 
-    &-title{
+    &-title {
         position: absolute;
         top: 1.5rem;
         left: 1.5rem;
-        width:20ch;
-        color:white;
+        width: 20ch;
+        color: white;
         font-size: 1rem;
     }
 }

@@ -46,9 +46,9 @@ const UserContextProvider = props => {
         getActivity(12)
         getSessions(12)
         getPerformance(12)
-        
+
         // return () => {}
-      },[] )
+    }, [])
     return <UserContext.Provider value={{
         user,
         activity,
