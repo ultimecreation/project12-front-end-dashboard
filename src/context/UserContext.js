@@ -1,18 +1,16 @@
 import { createContext, useEffect, useState } from "react";
+import { UserModel } from "../model/UserModel";
 
 
-const UserContext = createContext({
-    user: {},
-    activity: [],
-    sessions: []
-})
+const UserContext = createContext({})
 
 const UserContextProvider = props => {
     // initialize variables
     const [user, setUser] = useState({})
-    const [activity, setActivities] = useState([])
+    const [activities, setActivities] = useState([])
     const [sessions, setSessions] = useState([])
-    const [performance, setPerformances] = useState([])
+    const [performances, setPerformances] = useState([])
+    const userModel = new UserModel()
 
     /**
      * retrieve a single user using its id
@@ -23,7 +21,19 @@ const UserContextProvider = props => {
     const getUser = async id => {
         const data = await (await fetch(`http://localhost:3001/user/${id}`)).json()
         if (data) setUser(() => {
-            return { ...data.data }
+            
+            // bind incoming data 
+            userModel.setId(data.data.id)
+                        .setKeyData(data.data.keyData)
+                        .setTodayScore(data.data.todayScore)
+                        .setUserInfos(data.data.userInfos)
+
+            return { 
+                id: userModel.getId(),
+                keyData: userModel.getKeyData(),
+                todayScore: userModel.getTodayScore(),
+                userInfos: userModel.getUserInfos(),
+             }
         })
     }
 
@@ -36,7 +46,14 @@ const UserContextProvider = props => {
     const getActivities = async userId => {
         const data = await (await fetch(`http://localhost:3001/user/${userId}/activity`)).json()
         if (data) setActivities(() => {
-            return { ...data.data }
+
+            // bind incoming data 
+            userModel.setActivitySessions(data.data.sessions)
+
+            return { 
+                userId: userModel.getId(),
+                sessions: userModel.getActivitySessions()
+             }
         })
     }
 
@@ -49,7 +66,14 @@ const UserContextProvider = props => {
     const getSessions = async userId => {
         const data = await (await fetch(`http://localhost:3001/user/${userId}/average-sessions`)).json()
         if (data) setSessions(() => {
-            return { ...data.data }
+
+            // bind incoming data 
+            userModel.setDailySessions(data.data.sessions)
+           
+            return { 
+                userId: userModel.getId(),
+                sessions: userModel.getDailySessions()
+             }
         })
     }
 
@@ -62,7 +86,16 @@ const UserContextProvider = props => {
     const getPerformances = async userId => {
         const data = await (await fetch(`http://localhost:3001/user/${userId}/performance`)).json()
         if (data) setPerformances(() => {
-            return { ...data.data }
+
+            // bind incoming data 
+            userModel.setPerformanceData(data.data.data)
+                        .setPerformanceKind(data.data.kind)
+            
+            return { 
+                userId: userModel.getId(),
+                data: userModel.getPerformanceData(),
+                kind: userModel.getPerformanceKind()
+             }
         })
     }
 
@@ -76,13 +109,9 @@ const UserContextProvider = props => {
     }, [])
     return <UserContext.Provider value={{
         user,
-        activity,
+        activities,
         sessions,
-        performance,
-        getUser,
-        getActivities,
-        getSessions,
-        getPerformances,
+        performances
     }}>
         {props.children}
     </UserContext.Provider>

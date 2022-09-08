@@ -10,7 +10,7 @@ import './Profile.scss'
 
 const Profile = () => {
     const userContext = useContext(UserContext)
-    const { user, activity, sessions, performance } = userContext
+    const { user, activities, sessions, performances } = userContext
 
 
     return (
@@ -18,12 +18,12 @@ const Profile = () => {
             <ProfileHeader firstName={user.userInfos.firstName} />
             <div className="content">
                 <div className="content-main">
-                    <DayliActivity activities={activity.sessions} />
+                    <DayliActivity activities={activities.sessions} />
                     <section id="summary">
                         <Sessions sessions={sessions.sessions} />
                         <RadarItem 
-                            data={performance.data} 
-                            kind={performance.kind} 
+                            data={performances.data} 
+                            kind={performances.kind} 
                             firstName={user.userInfos.firstName} 
                         />
                         <Kpi score={user.todayScore} />
